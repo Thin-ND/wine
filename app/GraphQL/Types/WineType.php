@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\GraphQL\Types;
 
 use App\Wine;
@@ -14,7 +16,7 @@ class WineType extends GraphQLType
         'model' => Wine::class
     ];
 
-    public function fields()
+    public function fields(): array
     {
         return [
             'id' => [

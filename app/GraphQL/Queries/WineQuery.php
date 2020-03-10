@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\GraphQL\Queries;
 
+use GraphQL;
 use App\Wine;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
@@ -12,12 +15,12 @@ class WineQuery extends Query
         'name' => 'wine',
     ];
 
-    public function type()
+    public function type(): Type
     {
         return GraphQL::type('Wine');
     }
 
-    public function args()
+    public function args(): array
     {
         return [
             'id' => [
